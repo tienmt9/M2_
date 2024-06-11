@@ -26,7 +26,7 @@ public class Main {
                     String name = scanner.nextLine();
                     System.out.print("Enter Student Age: ");
                     int age = scanner.nextInt();
-                    scanner.nextLine();  // Consume newline
+                    scanner.nextLine();
                     addStudent(id, name, age);
                     break;
                 case 2:
@@ -46,7 +46,7 @@ public class Main {
                     System.out.println("Exiting the system.");
                     return;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.out.println("Invalid choice, try again.");
             }
         }
     }
@@ -76,9 +76,9 @@ public class Main {
             }
             students[studentsCount - 1] = null;
             studentsCount--;
-            System.out.println("Student with ID " + id + " has been removed.");
+            System.out.println("Student with input ID " + id + " has been removed.");
         } else {
-            System.out.println("Student with ID " + id + " not found.");
+            System.out.println("Student with input ID " + id + " not found.");
         }
     }
 
