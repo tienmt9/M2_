@@ -15,7 +15,7 @@ public class ContactManagement {
     }
 
     protected static void increaseArraySize() {
-        int newSize = contacts.length * 2;
+        int newSize = contacts.length + 2;
         Contact[] newStudents = new Contact[newSize];
         for (int i = 0; i < contacts.length; i++) {
             newStudents[i] = contacts[i];
