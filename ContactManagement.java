@@ -32,7 +32,7 @@ public class ContactManagement {
         int indexToRemove = -1;
 
         for (int i = 0; i < contactsCount; i++) {
-            if (contacts[i].phone.equals(phone)) {
+            if (contacts[i].getPhone().equals(phone)) {
                 indexToRemove = i;
                 break;
             }
@@ -54,7 +54,7 @@ public class ContactManagement {
         int indexToUpdate = -1;
 
         for (int i = 0; i < contactsCount; i++) {
-            if (contacts[i].phone.equals(phone)) {
+            if (contacts[i].getPhone().equals(phone)) {
                 indexToUpdate = i;
                 break;
             }
@@ -99,7 +99,7 @@ public class ContactManagement {
         int indexToSearch = -1;
 
         for (int i = 0; i < contactsCount; i++) {
-            if (contacts[i].phone.equals(phone)) {
+            if (contacts[i].getPhone().equals(phone)) {
                 indexToSearch = i;
                 break;
             }
