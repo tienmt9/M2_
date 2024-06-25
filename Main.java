@@ -18,7 +18,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter contact number you want to create: ");
+                    System.out.print("Enter the number of contacts you want to create: ");
                     int contactNumber = scanner.nextInt();
                     scanner.nextLine();
                     ContactManagement.createContact(contactNumber);
@@ -39,6 +39,7 @@ public class Main {
                     System.out.print("Enter Contact Phone: ");
                     String phone1 = scanner.nextLine();
                     ContactManagement.editExistingContact(phone1);
+                    break;
                 case 3:
                     System.out.print("Enter Contact Phone: ");
                     String phone2 = scanner.nextLine();
@@ -54,9 +55,11 @@ public class Main {
                     return;
                 default:
                     System.out.println("Thanks for using.");
+                    break;
             }
             scanner.close();
         }
     }
 }
 
+// nut thoat ra
