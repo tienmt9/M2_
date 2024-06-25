@@ -12,7 +12,7 @@ public class Main {
             System.out.println("3. Remove Contact");
             System.out.println("4. Display Contacts");
             System.out.println("5. Search Contact");
-            System.out.print("Choose an option: ");
+            System.out.print("Choose an option [1-5] or press any other key to quit: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -52,14 +52,13 @@ public class Main {
                     System.out.print("Enter Contact Phone: ");
                     String phone3 = scanner.nextLine();
                     ContactManagement.searchExistingContact(phone3);
-                    return;
+                    break;
                 default:
                     System.out.println("Thanks for using.");
-                    break;
+                    scanner.close();
+                    return;
             }
-            scanner.close();
         }
     }
 }
 
-// nut thoat ra

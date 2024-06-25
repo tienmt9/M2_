@@ -113,8 +113,6 @@ public class ContactManagement {
     }
 }
 
-// array list
-
 
 
 
