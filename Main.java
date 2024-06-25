@@ -18,6 +18,11 @@ public class Main {
 
             switch (choice) {
                 case 1:
+                    System.out.print("Enter contact number you want to create: ");
+                    int contactNumber = scanner.nextInt();
+                    scanner.nextLine();
+                    ContactManagement.createContact(contactNumber);
+
                     System.out.print("Enter Contact ID: ");
                     String id = scanner.nextLine();
                     System.out.print("Enter Contact Name: ");
@@ -31,25 +36,26 @@ public class Main {
                     ContactManagement.addNewContacts(id, name, phone, email, address);
                     break;
                 case 2:
-                    System.out.print("Enter Contact ID: ");
-                    String id1 = scanner.nextLine();
-                    ContactManagement.editExistingContact(id1);
+                    System.out.print("Enter Contact Phone: ");
+                    String phone1 = scanner.nextLine();
+                    ContactManagement.editExistingContact(phone1);
                 case 3:
-                    System.out.print("Enter Contact ID: ");
-                    String id2 = scanner.nextLine();
-                    ContactManagement.removeExistingContact(id2);
+                    System.out.print("Enter Contact Phone: ");
+                    String phone2 = scanner.nextLine();
+                    ContactManagement.removeExistingContact(phone2);
                     break;
                 case 4:
                     ContactManagement.showOurContacts();
                     break;
                 case 5:
-                    System.out.print("Enter Contact ID: ");
-                    String id3 = scanner.nextLine();
-                    ContactManagement.searchExistingContact(id3);
+                    System.out.print("Enter Contact Phone: ");
+                    String phone3 = scanner.nextLine();
+                    ContactManagement.searchExistingContact(phone3);
                     return;
                 default:
                     System.out.println("Thanks for using.");
             }
+            scanner.close();
         }
     }
 }

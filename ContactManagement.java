@@ -2,8 +2,12 @@ import java.util.Scanner;
 
 public class ContactManagement {
     protected static Scanner scanner = new Scanner(System.in);
-    protected static Contact[] contacts = new Contact[2];
+    protected static Contact[] contacts ;
     protected static int contactsCount = 0;
+
+    protected static void createContact(int contactNumber) {
+        contacts = new Contact[contactNumber];
+    }
 
     protected static void addNewContacts(String id, String name, String phone, String email, String address) {
         if (contactsCount >= contacts.length) {
@@ -15,20 +19,20 @@ public class ContactManagement {
     }
 
     protected static void increaseArraySize() {
-        int newSize = contacts.length + 2;
-        Contact[] newStudents = new Contact[newSize];
+        int newSize = contacts.length + 1;
+        Contact[] newContacts = new Contact[newSize];
         for (int i = 0; i < contacts.length; i++) {
-            newStudents[i] = contacts[i];
+            newContacts[i] = contacts[i];
         }
-        contacts = newStudents;
+        contacts = newContacts;
         System.out.println("Array size increased to " + newSize);
     }
 
-    protected static void removeExistingContact(String id) {
+    protected static void removeExistingContact(String phone) {
         int indexToRemove = -1;
 
         for (int i = 0; i < contactsCount; i++) {
-            if (contacts[i].id.equals(id)) {
+            if (contacts[i].phone.equals(phone)) {
                 indexToRemove = i;
                 break;
             }
@@ -40,17 +44,17 @@ public class ContactManagement {
             }
             contacts[contactsCount - 1] = null;
             contactsCount--;
-            System.out.println("Contact with input ID " + id + " has been removed.");
+            System.out.println("Contact with input Phone " + phone + " has been removed.");
         } else {
-            System.out.println("Contact with input ID " + id + " not found.");
+            System.out.println("Contact with input Phone " + phone + " not found.");
         }
     }
 
-    protected static void editExistingContact(String id) {
+    protected static void editExistingContact(String phone) {
         int indexToUpdate = -1;
 
         for (int i = 0; i < contactsCount; i++) {
-            if (contacts[i].id.equals(id)) {
+            if (contacts[i].phone.equals(phone)) {
                 indexToUpdate = i;
                 break;
             }
@@ -75,9 +79,9 @@ public class ContactManagement {
             contacts[indexToUpdate].email = newEmail;
             contacts[indexToUpdate].address = newAddress;
 
-            System.out.println("Contact with input ID " + id + " has been updated.");
+            System.out.println("Contact with input Phone " + phone + " has been updated.");
         } else {
-            System.out.println("Contact with input ID " + id + " not found.");
+            System.out.println("Contact with input Phone " + phone + " not found.");
         }
     }
 
@@ -91,11 +95,11 @@ public class ContactManagement {
         }
     }
 
-    protected static void searchExistingContact(String id) {
+    protected static void searchExistingContact(String phone) {
         int indexToSearch = -1;
 
         for (int i = 0; i < contactsCount; i++) {
-            if (contacts[i].id.equals(id)) {
+            if (contacts[i].phone.equals(phone)) {
                 indexToSearch = i;
                 break;
             }
@@ -104,7 +108,7 @@ public class ContactManagement {
         if (indexToSearch != -1) {
             System.out.println(contacts[indexToSearch]);
         } else {
-            System.out.println("Contact with input ID " + id + " not found.");
+            System.out.println("Contact with input Phone " + phone + " not found.");
         }
     }
 }

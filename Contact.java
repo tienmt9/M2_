@@ -5,6 +5,16 @@ public class Contact {
     String email;
     String address;
 
+    Contact(){
+    }
+
+    Contact(String name, String phone, String email, String address) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+    }
+
     Contact(String id, String name, String phone, String email, String address) {
         this.id = id;
         this.name = name;
